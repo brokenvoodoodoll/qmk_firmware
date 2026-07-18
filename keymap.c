@@ -52,9 +52,9 @@ LAYOUT(
 ),
 LAYOUT(
     RM_TOGG, KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,                     KC_NO,   KC_BRID, KC_NO,   KC_BRIU, KC_NO,   KC_NO,
-    RM_FLGN, RM_SPDU, RM_VALU, RM_SATU, RM_HUEU, RM_NEXT,                   KC_NO,   KC_VOLD, KC_MUTE, KC_VOLU, KC_NO,   KC_NO,
-    RM_FLGP, RM_SPDD, RM_VALD, RM_SATD, RM_HUED, RM_PREV,                   KC_NO,   KC_MPRV, KC_MPLY, KC_MNXT, KC_NO,   KC_NO,
-    AG_SWAP, KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_MCTL, KC_NO,   KC_LPAD, KC_NO,
+    KC_NO,   RM_SPDU, RM_VALU, RM_SATU, RM_HUEU, RM_NEXT,                   KC_NO,   KC_VOLD, KC_MUTE, KC_VOLU, KC_NO,   KC_NO,
+    KC_NO,   RM_SPDD, RM_VALD, RM_SATD, RM_HUED, RM_PREV,                   KC_NO,   KC_MPRV, KC_MPLY, KC_MNXT, KC_NO,   KC_NO,
+    AG_TOGG, KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_MCTL, KC_NO,   KC_LPAD, KC_NO,
                       KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS
 )
 };
