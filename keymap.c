@@ -49,7 +49,7 @@ LAYOUT(
     KC_NO,   KC_NO, KC_NO,   KC_NO,      KC_NO,   KC_NO,                        KC_NO,      KC_NO,      KC_NO,      KC_NO,      KC_NO,      KC_NO,
     KC_NO,   KC_NO, KC_QUOT, S(KC_QUOT), S(KC_6), S(KC_4),                      S(KC_9),    S(KC_0),    KC_EQL,     S(KC_EQL),  S(KC_BSLS), KC_GRV,
     KC_NO,   KC_NO, S(KC_2), S(KC_7),    S(KC_1), S(KC_SLSH),                   KC_LBRC,    KC_RBRC,    KC_MINS,    S(KC_MINS), KC_SCLN,    S(KC_SCLN),
-    KC_TRNS, KC_NO, S(KC_5), S(KC_3),    S(KC_7), S(KC_7),    KC_NO,   KC_NO,   S(KC_LBRC), S(KC_RBRC), S(KC_COMM), S(KC_DOT),  KC_SLSH,    KC_BSLS,
+    KC_TRNS, KC_NO, S(KC_5), S(KC_3),    S(KC_7), S(KC_8),    KC_NO,   KC_NO,   S(KC_LBRC), S(KC_RBRC), S(KC_COMM), S(KC_DOT),  KC_SLSH,    KC_BSLS,
                     KC_TRNS, KC_TRNS,    KC_TRNS, KC_TRNS,    KC_TRNS, KC_TRNS, DEL_LT,     KC_TRNS,    KC_TRNS,    KC_TRNS
 ),
 LAYOUT(
