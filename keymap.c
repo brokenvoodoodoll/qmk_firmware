@@ -46,17 +46,17 @@ LAYOUT(
                    KC_LCTL, KC_LALT, KC_LGUI, TAB_LT, SPC_LT,    ENT_LT,    BSPC_LT,  KC_RGUI, KC_RALT, KC_RCTL
 ),
 LAYOUT(
-    KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,                     KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO, KC_EQL,
-    KC_TRNS, KC_NO,   KC_NO,   KC_NO,   KC_NO,   CG_TOGG,                   MS_BTN5, KC_HOME, KC_UP,   KC_END,  KC_NO, KC_RBRC,
-    KC_TRNS, KC_LCTL, KC_LALT, KC_LGUI, KC_LSFT, CW_TOGG,                   MS_BTN4, KC_LEFT, KC_DOWN, KC_RGHT, KC_NO, KC_NO,
-    KC_TRNS, KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_PSCR, KC_TRNS, KC_TRNS, KC_NO,   KC_PGDN, KC_INS,  KC_PGUP, KC_NO, KC_NO,
+    KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,                     KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_EQL,
+    KC_TRNS, KC_NO,   KC_NO,   KC_NO,   KC_NO,   CG_TOGG,                   MS_BTN5, KC_HOME, KC_UP,   KC_END,  KC_NO,   KC_RBRC,
+    KC_TRNS, KC_LCTL, KC_LALT, KC_LGUI, KC_LSFT, CW_TOGG,                   MS_BTN4, KC_LEFT, KC_DOWN, KC_RGHT, KC_NO,   KC_NO,
+    KC_TRNS, KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_PSCR, KC_TRNS, KC_TRNS, KC_NO,   KC_PGDN, KC_INS,  KC_PGUP, KC_BSLS, KC_NO,
                       KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, DEL_LT,  KC_TRNS, KC_TRNS, KC_TRNS
 ),
 LAYOUT(
     KC_NO,   KC_NO, KC_NO,   KC_NO,   KC_NO,   KC_NO,                     KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_EQL,
     KC_TRNS, KC_F1, KC_F2,   KC_F3,   KC_F4,   KC_PSCR,                   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_RBRC,
     KC_TRNS, KC_F5, KC_F6,   KC_F7,   KC_F8,   KC_SCRL,                   KC_NO,   KC_RSFT, KC_RGUI, KC_LALT, KC_RCTL, KC_NO,
-    KC_TRNS, KC_F9, KC_F10,  KC_F11,  KC_F12,  KC_PAUS, KC_TRNS, KC_TRNS, KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,
+    KC_TRNS, KC_F9, KC_F10,  KC_F11,  KC_F12,  KC_PAUS, KC_TRNS, KC_TRNS, KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_BSLS, KC_NO,
                     KC_TRNS, KC_TRNS, KC_TRNS, ESC_LT,  KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS
 ),
 LAYOUT(
