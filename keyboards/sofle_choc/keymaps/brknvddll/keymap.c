@@ -51,7 +51,7 @@ LAYOUT(
     KC_NO,   KC_NO, KC_NO,   KC_NO,   KC_NO,   KC_NO,                     KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_EQL,
     KC_TRNS, KC_NO, KC_NO,   KC_NO,   KC_NO,   KC_NO,                     MS_BTN5, KC_HOME, KC_UP,   KC_END,  KC_NO,   KC_RBRC,
     KC_TRNS, KC_NO, KC_NO,   KC_NO,   KC_NO,   KC_NO,                     MS_BTN4, KC_LEFT, KC_DOWN, KC_RGHT, KC_NO,   KC_GRV,
-    KC_TRNS, KC_NO, KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_TRNS, KC_TRNS, KC_NO,   KC_PGDN, KC_INS,  KC_PGUP, KC_BSLS, KC_NO,
+    KC_TRNS, KC_NO, KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_TRNS, KC_TRNS, KC_NO,   KC_PGUP, KC_INS,  KC_PGDN, KC_BSLS, KC_NO,
                     KC_TRNS, KC_TRNS, KC_TRNS, F18_LT2, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS
 ),
 LAYOUT(
