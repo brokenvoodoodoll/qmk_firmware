@@ -29,7 +29,7 @@
 #define RGB_MATRIX_MAXIMUM_BRIGHTNESS 100  // limits maximum brightness of LEDs (max 255). Higher may cause the controller to crash.
 
 #define SPLIT_TRANSACTION_IDS_USER KEYSTROKE_SYNC_ID
-#define TAPPING_TERM 200
+#define TAPPING_TERM 180
 #define QUICK_TAP_TERM 120
 // #define FLOW_TAP_TERM 150
 #define PERMISSIVE_HOLD
