@@ -16,15 +16,15 @@
 #define SYM 4
 #define NUM 5
 
-#define CTL_ESC LCTL_T(KC_F18)
+#define CTL_ESC LCTL_T(KC_ESC)
 #define SPC_SFT LSFT_T(KC_SPC)
 #define ENT_SFT RSFT_T(KC_ENT)
-#define F18_LT LT(FUNC, KC_TAB)
+#define F18_LT LT(FUNC, KC_F18)
 #define BSPC_LT LT(NAV, KC_BSPC)
 #define CTL_QUOT RCTL_T(KC_QUOT)
 #define SFT_RBRC RSFT_T(KC_RBRC)
 
-#define F18_LT2 LT(MEDIA, KC_TAB)
+#define F18_LT2 LT(MEDIA, KC_F18)
 #define DEL_LT2 LT(MEDIA, KC_DEL)
 
 #define MCTL_LEFT LCAG(KC_LEFT)
