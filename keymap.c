@@ -4,11 +4,7 @@
 #include "keymap_us.h"
 #include "oled_driver.h"
 #include "quantum_keycodes.h"
-#include "os_detection.h"
 #include QMK_KEYBOARD_H
-#ifdef CONSOLE_ENABLE
-#include "print.h"
-#endif
 
 #define BASE 0
 #define NAV 1
@@ -158,24 +154,6 @@ void render_swap_status(void) {
     } else {
         oled_write_P(PSTR("CGMAC"), false);
     }
-
-    switch (detected_host_os()) {
-        case OS_MACOS:
-            oled_write_P(PSTR("MAC\n"), false);
-            break;
-        case OS_WINDOWS:
-            oled_write_P(PSTR("WIN\n"), false);
-            break;
-        case OS_LINUX:
-            oled_write_P(PSTR("LIN\n"), false);
-            break;
-        case OS_IOS:
-            oled_write_P(PSTR("IOS\n"), false);
-            break;
-        default:
-            oled_write_P(PSTR("?\n"), false);
-            break;
-    }
 }
 
 void render_dynamic_tapping_term(void) {
@@ -196,19 +174,3 @@ bool oled_task_user(void) {
     return false;
 }
 
-bool process_record_user(uint16_t keycode, keyrecord_t *record) {
-#ifdef CONSOLE_ENABLE
-    const bool is_combo = record->event.type == COMBO_EVENT;
-    uprintf("0x%04X,%u,%u,%u,%b,0x%02X,0x%02X,%u\n",
-            keycode,
-            is_combo ? 254 : record->event.key.row,
-            is_combo ? 254 : record->event.key.col,
-            get_highest_layer(layer_state),
-            record->event.pressed,
-            get_mods(),
-            get_oneshot_mods(),
-            record->tap.count
-            );
-#endif
-    return true;
-}
