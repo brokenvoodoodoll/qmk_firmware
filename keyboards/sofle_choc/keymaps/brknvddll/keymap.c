@@ -8,34 +8,27 @@
 
 #define BASE 0
 #define NAV 1
-#define FUNC 2
-#define MEDIA 3
-#define SYM 4
-#define NUM 5
+#define NUM 2
+#define SYM 3
+#define FUN 4
+#define MED 5
 
-#define CTL_F18 LCTL_T(KC_F18)
 #define SPC_SFT LSFT_T(KC_SPC)
-#define ENT_SFT RSFT_T(KC_ENT)
-#define TAB_LT LT(FUNC, KC_TAB)
-#define BSPC_LT LT(NAV, KC_BSPC)
-#define CTL_QUOT RCTL_T(KC_QUOT)
-#define SFT_RBRC RSFT_T(KC_RBRC)
-
-#define BSPC_LT2 LT(MEDIA, KC_BSPC)
-#define TAB_LT2 LT(MEDIA, KC_TAB)
-
-#define MCTL_LEFT LCAG(KC_LEFT)
-#define MCTL_RGHT LCAG(KC_RGHT)
+#define ENT_NAV LT(NAV, KC_ENT)
+#define TAB_NUM LT(NUM, KC_TAB)
+#define BSPC_SYM LT(SYM, KC_BSPC)
+#define DEL_FUN LT(FUN, KC_DEL)
+#define ESC_MED LT(MED, KC_ESC)
 
 /* --- HOME ROW MODS --- */
-// #define HM_A LCTL_T(KC_A)
-// #define HM_S LALT_T(KC_S)
-// #define HM_D LGUI_T(KC_D)
-// #define HM_F LSFT_T(KC_F)
-// #define HM_J RSFT_T(KC_J)
-// #define HM_K RGUI_T(KC_K)
-// #define HM_L LALT_T(KC_L)
-// #define HM_SCLN RCTL_T(KC_SCLN)
+#define HM_A LCTL_T(KC_A)
+#define HM_S LALT_T(KC_S)
+#define HM_D LGUI_T(KC_D)
+#define HM_F LSFT_T(KC_F)
+#define HM_J RSFT_T(KC_J)
+#define HM_K RGUI_T(KC_K)
+#define HM_L LALT_T(KC_L)
+#define HM_SCLN RCTL_T(KC_SCLN)
 
 const uint16_t PROGMEM combo_cg_togg[] = {KC_G, KC_H, COMBO_END};
 const uint16_t PROGMEM combo_caps_word[] = {KC_T, KC_Y, COMBO_END};
@@ -66,58 +59,78 @@ combo_t key_combos[] = {
     COMBO(combo_cg_togg, CG_TOGG),
     COMBO(combo_caps_word, CW_TOGG),
 
-    COMBO(as_combo, S(KC_GRV)),
-    COMBO(we_combo, S(KC_COMM)),
-    COMBO(sd_combo, KC_GRV),
-    COMBO(xc_combo, S(KC_6)),
-    COMBO(er_combo, KC_LBRC),
-    COMBO(df_combo, S(KC_9)),
-    COMBO(cv_combo, S(KC_LBRC)),
-    COMBO(rt_combo, S(KC_1)),
-    COMBO(fg_combo, KC_MINS),
-    COMBO(vb_combo, S(KC_MINS)),
-
-    COMBO(lscln_combo, S(KC_BSLS)),
-    COMBO(io_combo, S(KC_DOT)),
-    COMBO(kl_combo, KC_BSLS),
-    COMBO(commdot_combo, S(KC_4)),
-    COMBO(ui_combo, KC_RBRC),
-    COMBO(jk_combo, S(KC_0)),
-    COMBO(mcomm_combo, S(KC_RBRC)),
-    COMBO(yu_combo, S(KC_8)),
-    COMBO(hj_combo, KC_EQL),
-    COMBO(nm_combo, S(KC_EQL)),
+    // COMBO(as_combo, S(KC_GRV)),
+    // COMBO(we_combo, S(KC_COMM)),
+    // COMBO(sd_combo, KC_GRV),
+    // COMBO(xc_combo, S(KC_6)),
+    // COMBO(er_combo, KC_LBRC),
+    // COMBO(df_combo, S(KC_9)),
+    // COMBO(cv_combo, S(KC_LBRC)),
+    // COMBO(rt_combo, S(KC_1)),
+    // COMBO(fg_combo, KC_MINS),
+    // COMBO(vb_combo, S(KC_MINS)),
+    //
+    // COMBO(lscln_combo, S(KC_BSLS)),
+    // COMBO(io_combo, S(KC_DOT)),
+    // COMBO(kl_combo, KC_BSLS),
+    // COMBO(commdot_combo, S(KC_4)),
+    // COMBO(ui_combo, KC_RBRC),
+    // COMBO(jk_combo, S(KC_0)),
+    // COMBO(mcomm_combo, S(KC_RBRC)),
+    // COMBO(yu_combo, S(KC_8)),
+    // COMBO(hj_combo, KC_EQL),
+    // COMBO(nm_combo, S(KC_EQL)),
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
+// BASE
 LAYOUT(
-    KC_EQL, KC_1, KC_2,    KC_3,    KC_4,    KC_5,                      KC_6,    KC_7,    KC_8,    KC_9,   KC_0,    KC_MINS,
-    KC_F18, KC_Q, KC_W,    KC_E,    KC_R,    KC_T,                      KC_Y,    KC_U,    KC_I,    KC_O,   KC_P,    KC_LBRC,
-    KC_ESC, KC_A, KC_S,    KC_D,    KC_F,    KC_G,                      KC_H,    KC_J,    KC_K,    KC_L,   KC_SCLN, KC_QUOT,
-    KC_DEL, KC_Z, KC_X,    KC_C,    KC_V,    KC_B,   KC_TRNS, KC_TRNS,  KC_N,    KC_M,    KC_COMM, KC_DOT, KC_SLSH, KC_RBRC,
-                  KC_LCTL, KC_LALT, KC_LGUI, TAB_LT, SPC_SFT,  ENT_SFT, BSPC_LT, KC_RGUI, KC_LALT, KC_RCTL
+    KC_NO,   KC_NO, KC_NO, KC_NO, KC_NO,   KC_NO,                     KC_NO,    KC_NO,   KC_NO,   KC_NO,  KC_NO,   KC_NO,
+    KC_MINS, KC_Q,  KC_W,  KC_E,  KC_R,    KC_T,                      KC_Y,     KC_U,    KC_I,    KC_O,   KC_P,    KC_LBRC,
+    KC_F18,  HM_A,  HM_S,  HM_D,  HM_F,    KC_G,                      KC_H,     HM_J,    HM_K,    HM_L,   HM_SCLN, KC_QUOT,
+    KC_EQL,  KC_Z,  KC_X,  KC_C,  KC_V,    KC_B,    KC_NO,   KC_NO,   KC_N,     KC_M,    KC_COMM, KC_DOT, KC_SLSH, KC_RBRC,
+                    KC_NO, KC_NO, ESC_MED, TAB_NUM, SPC_SFT, ENT_NAV, BSPC_SYM, DEL_FUN, KC_NO,   KC_NO
 ),
+// NAV
 LAYOUT(
-    KC_TRNS, KC_NO, KC_NO,   KC_NO,   KC_NO,   KC_NO,                     KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,
-    KC_TRNS, KC_NO, KC_NO,   KC_NO,   KC_NO,   KC_NO,                     MS_BTN5, KC_HOME, KC_UP,   KC_END,  KC_NO,   KC_NO,
-    KC_TRNS, KC_NO, KC_NO,   KC_NO,   KC_NO,   KC_NO,                     MS_BTN4, KC_LEFT, KC_DOWN, KC_RGHT, KC_NO,   KC_GRV,
-    KC_TRNS, KC_NO, KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_TRNS, KC_TRNS, KC_NO,   KC_PGDN, KC_INS,  KC_PGUP, KC_BSLS, KC_NO,
-                    KC_TRNS, KC_TRNS, KC_TRNS, TAB_LT2, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS
+    KC_NO, KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,                     KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,
+    KC_NO, KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,                     MS_BTN5, KC_HOME, KC_UP,   KC_END,  KC_NO,   KC_NO,
+    KC_NO, KC_LCTL, KC_LALT, KC_LGUI, KC_LSFT, KC_NO,                     MS_BTN4, KC_LEFT, KC_DOWN, KC_RGHT, KC_NO,   KC_GRV,
+    KC_NO, KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_INS,  KC_PGDN, KC_NO,   KC_PGUP, KC_BSLS, KC_NO,
+                    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS
 ),
+// NUM
 LAYOUT(
-    KC_TRNS, KC_NO, KC_NO,   KC_NO,   KC_NO,   KC_NO,                     KC_NO,    KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,
-    KC_TRNS, KC_F1, KC_F2,   KC_F3,   KC_F4,   KC_F5,                     KC_NO,    KC_7,    KC_8,    KC_9,    KC_NO,   KC_NO,
-    KC_TRNS, KC_F6, KC_F7,   KC_F8,   KC_F9,   KC_F10,                    KC_NO,    KC_4,    KC_5,    KC_6,    KC_NO,   KC_GRV,
-    KC_TRNS, KC_NO, KC_NO,   KC_NO,   KC_F11,  KC_F12,  KC_TRNS, KC_TRNS, KC_0,     KC_1,    KC_2,    KC_3,    KC_BSLS, KC_NO,
-                    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, BSPC_LT2, KC_TRNS, KC_TRNS, KC_TRNS
+    KC_NO, KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,                     KC_NO,     KC_NO,  KC_NO, KC_NO, KC_NO,   KC_NO,
+    KC_NO, KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,                     S(KC_EQL), KC_7,   KC_8,  KC_9,  S(KC_8), KC_NO,
+    KC_NO, KC_LCTL, KC_LALT, KC_LGUI, KC_LSFT, KC_NO,                     KC_MINS,   KC_4,   KC_5,  KC_6,  KC_SLSH, KC_GRV,
+    KC_NO, KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_EQL,    KC_1,   KC_2,  KC_3,  KC_BSLS, KC_NO,
+                    KC_NO,   KC_NO,   KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_0,      KC_DOT, KC_NO, KC_NO
 ),
+// SYM
 LAYOUT(
-    KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,                     KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,
-    RM_NEXT, RM_SPDU, RM_HUEU, RM_SATU, RM_VALU, KC_NO,                     KC_MCTL, KC_VOLD, KC_MUTE, KC_VOLU, DT_UP,   KC_NO,
-    RM_PREV, RM_SPDD, RM_HUED, RM_SATD, RM_VALD, RM_TOGG,                   KC_LPAD, KC_MPRV, KC_MPLY, KC_MNXT, DT_DOWN, KC_NO,
-    KC_TRNS, KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_BRID, KC_NO,   KC_BRIU, KC_NO,   KC_NO,
-                      KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS
-)
+    KC_NO, KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,                        KC_NO,     KC_NO,   KC_NO,   KC_NO,      KC_NO,      KC_NO,
+    KC_NO, S(KC_1), S(KC_2), S(KC_3), S(KC_4), S(KC_5),                      S(KC_6),   S(KC_7), S(KC_8), KC_SLSH,    S(KC_SLSH), KC_NO,
+    KC_NO, KC_LCTL, KC_LALT, KC_LGUI, KC_LSFT, KC_BSLS,                      KC_GRV,    S(KC_9), KC_LBRC, S(KC_LBRC), S(KC_COMM), KC_QUOT,
+    KC_NO, KC_NO,   KC_NO,   KC_NO,   KC_NO,   S(KC_BSLS), KC_NO,   KC_NO,   S(KC_GRV), S(KC_0), KC_RBRC, S(KC_RBRC), S(KC_DOT),  S(KC_QUOT),
+                    KC_NO,   KC_NO,   KC_TRNS, KC_TRNS,    KC_TRNS, KC_TRNS, KC_TRNS,   KC_TRNS, KC_NO,   KC_NO
+),
+// FUN
+LAYOUT(
+    KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,   KC_NO,                     KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,
+    KC_NO, KC_F1, KC_F2, KC_F3, KC_F4,   KC_F5,                     KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,
+    KC_NO, KC_F6, KC_F7, KC_F8, KC_F9,   KC_F10,                    KC_NO,   KC_RSFT, KC_RGUI, KC_LALT, KC_RCTL, KC_GRV,
+    KC_NO, KC_NO, KC_NO, KC_NO, KC_F11,  KC_F12,  KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_BSLS, KC_NO,
+                  KC_NO, KC_NO, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_NO,   KC_NO
+),
+// MED
+LAYOUT(
+    KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,                     KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO, KC_NO,
+    RM_NEXT, RM_SPDU, RM_HUEU, RM_SATU, RM_VALU, KC_NO,                     DT_UP,   KC_VOLD, KC_MUTE, KC_VOLU, KC_NO, KC_NO,
+    RM_PREV, RM_SPDD, RM_HUED, RM_SATD, RM_VALD, RM_TOGG,                   DT_DOWN, KC_MPRV, KC_MPLY, KC_MNXT, KC_NO, KC_NO,
+    KC_TRNS, KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_BRID, KC_NO,   KC_BRIU, KC_NO, KC_NO,
+                      KC_NO,   KC_NO,   KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_NO,   KC_NO
+  )
 };
 
 #if defined(ENCODER_MAP_ENABLE)
@@ -125,7 +138,9 @@ const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][NUM_DIRECTIONS] = {
     { ENCODER_CCW_CW(MS_WHLL, MS_WHLR), ENCODER_CCW_CW(MS_WHLU, MS_WHLD) },
     { ENCODER_CCW_CW(KC_BRIU, KC_BRID), ENCODER_CCW_CW(KC_VOLU, KC_VOLD) },
     { ENCODER_CCW_CW(KC_BRIU, KC_BRID), ENCODER_CCW_CW(KC_VOLU, KC_VOLD) },
-    { ENCODER_CCW_CW(KC_NO,   KC_NO),   ENCODER_CCW_CW(KC_NO,   KC_NO) },
+    { ENCODER_CCW_CW(KC_BRIU, KC_BRID), ENCODER_CCW_CW(KC_VOLU, KC_VOLD) },
+    { ENCODER_CCW_CW(KC_BRIU, KC_BRID), ENCODER_CCW_CW(KC_VOLU, KC_VOLD) },
+    { ENCODER_CCW_CW(KC_BRIU, KC_BRID), ENCODER_CCW_CW(KC_VOLU, KC_VOLD) },
 };
 #endif
 
@@ -181,10 +196,10 @@ void render_layer_status(void) {
     uint8_t active_layer = get_highest_layer(layer_state);
     oled_write_P(PSTR("BASE\n"), active_layer == BASE);
     oled_write_P(PSTR("NAV\n"), active_layer == NAV);
-    oled_write_P(PSTR("FUNC\n"), active_layer == FUNC);
-    oled_write_P(PSTR("MEDIA\n"), active_layer == MEDIA);
-    // oled_write_P(PSTR("SYM\n"), active_layer == SYM);
-    // oled_write_P(PSTR("NUM\n"), active_layer == NUM);
+    oled_write_P(PSTR("NUM\n"), active_layer == NUM);
+    oled_write_P(PSTR("SYM\n"), active_layer == SYM);
+    oled_write_P(PSTR("FUN\n"), active_layer == FUN);
+    oled_write_P(PSTR("MED\n"), active_layer == MED);
 }
 
 void render_swap_status(void) {
