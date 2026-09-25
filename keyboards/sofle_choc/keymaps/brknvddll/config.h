@@ -30,7 +30,7 @@
 
 #define SPLIT_TRANSACTION_IDS_USER KEYSTROKE_SYNC_ID
 #define CHORDAL_HOLD
-#define TAPPING_TERM 250
+#define TAPPING_TERM 200
 #define FLOW_TAP_TERM 150
 #define QUICK_TAP_TERM 120
 #define PERMISSIVE_HOLD
@@ -45,7 +45,7 @@
 #undef ENABLE_RGB_MATRIX_ALPHAS_MODS         // Static dual hue, speed is hue for secondary hue
 #undef ENABLE_RGB_MATRIX_GRADIENT_UP_DOWN    // Static gradient top to bottom, speed controls how much gradient changes
 #undef ENABLE_RGB_MATRIX_GRADIENT_LEFT_RIGHT    // Static gradient left to right, speed controls how much gradient changes
-// #undef ENABLE_RGB_MATRIX_BREATHING           // Single hue brightness cycling animation
+#undef ENABLE_RGB_MATRIX_BREATHING           // Single hue brightness cycling animation
 #undef ENABLE_RGB_MATRIX_BAND_SAT        // Single hue band fading saturation scrolling left to right
 #undef ENABLE_RGB_MATRIX_BAND_VAL        // Single hue band fading brightness scrolling left to right
 #undef ENABLE_RGB_MATRIX_BAND_PINWHEEL_SAT   // Single hue 3 blade spinning pinwheel fades saturation
