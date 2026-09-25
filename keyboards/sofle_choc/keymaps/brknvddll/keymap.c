@@ -33,7 +33,9 @@
 const uint16_t PROGMEM combo_cg_togg[] = {KC_G, KC_H, COMBO_END};
 const uint16_t PROGMEM combo_caps_word[] = {KC_T, KC_Y, COMBO_END};
 
+const uint16_t PROGMEM qw_combo[] = {KC_A, KC_S, COMBO_END};
 const uint16_t PROGMEM as_combo[] = {KC_A, KC_S, COMBO_END};
+const uint16_t PROGMEM zx_combo[] = {KC_A, KC_S, COMBO_END};
 const uint16_t PROGMEM we_combo[] = {KC_W, KC_E, COMBO_END};
 const uint16_t PROGMEM sd_combo[] = {KC_S, KC_D, COMBO_END};
 const uint16_t PROGMEM xc_combo[] = {KC_X, KC_C, COMBO_END};
@@ -44,7 +46,9 @@ const uint16_t PROGMEM rt_combo[] = {KC_R, KC_T, COMBO_END};
 const uint16_t PROGMEM fg_combo[] = {KC_F, KC_G, COMBO_END};
 const uint16_t PROGMEM vb_combo[] = {KC_V, KC_B, COMBO_END};
 
+const uint16_t PROGMEM op_combo[]   = {KC_O, KC_P, COMBO_END};
 const uint16_t PROGMEM lscln_combo[]   = {KC_L, KC_SCLN, COMBO_END};
+const uint16_t PROGMEM dotslsh_combo[]   = {KC_DOT, KC_SLSH, COMBO_END};
 const uint16_t PROGMEM io_combo[] = {KC_I, KC_O, COMBO_END};
 const uint16_t PROGMEM kl_combo[] = {KC_K, KC_L, COMBO_END};
 const uint16_t PROGMEM commdot_combo[] = {KC_COMM, KC_DOT, COMBO_END};
@@ -59,27 +63,31 @@ combo_t key_combos[] = {
     COMBO(combo_cg_togg, CG_TOGG),
     COMBO(combo_caps_word, CW_TOGG),
 
+    COMBO(qw_combo, S(KC_COMM)),
     // COMBO(as_combo, S(KC_GRV)),
-    // COMBO(we_combo, S(KC_COMM)),
-    COMBO(sd_combo, KC_BSLS),
-    COMBO(xc_combo, S(KC_BSLS)),
-    COMBO(er_combo, S(KC_COMM)),
-    COMBO(df_combo, KC_GRV),
-    COMBO(cv_combo, S(KC_GRV)),
-    COMBO(rt_combo, KC_LBRC),
-    COMBO(fg_combo, S(KC_9)),
-    COMBO(vb_combo, S(KC_LBRC)),
+    COMBO(zx_combo, S(KC_GRV)),
+    COMBO(we_combo, KC_LBRC),
+    // COMBO(sd_combo, KC_BSLS),
+    COMBO(xc_combo, S(KC_EQL)),
+    COMBO(er_combo, S(KC_0)),
+    // COMBO(df_combo, KC_GRV),
+    COMBO(cv_combo, S(KC_MINS)),
+    COMBO(rt_combo, S(KC_LBRC)),
+    // COMBO(fg_combo, S(KC_9)),
+    COMBO(vb_combo, S(KC_BSLS)),
 
+    COMBO(op_combo, S(KC_DOT)),
     // COMBO(lscln_combo, KC_BSLS),
-    // COMBO(io_combo, KC_BSLS),
-    COMBO(kl_combo, KC_EQL),
+    COMBO(dotslsh_combo, KC_GRV),
+    COMBO(io_combo, KC_RBRC),
+    // COMBO(kl_combo, KC_EQL),
     COMBO(commdot_combo, S(KC_EQL)),
-    COMBO(ui_combo, S(KC_DOT)),
-    COMBO(jk_combo, KC_MINS),
-    COMBO(mcomm_combo, S(KC_MINS)),
-    COMBO(yu_combo, KC_RBRC),
-    COMBO(hj_combo, S(KC_0)),
-    COMBO(nm_combo, S(KC_RBRC)),
+    COMBO(ui_combo, S(KC_9)),
+    // COMBO(jk_combo, KC_MINS),
+    COMBO(mcomm_combo, KC_MINS),
+    COMBO(yu_combo, S(KC_RBRC)),
+    // COMBO(hj_combo, S(KC_0)),
+    COMBO(nm_combo, S(KC_BSLS)),
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
