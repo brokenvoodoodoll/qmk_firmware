@@ -8,17 +8,13 @@
 
 #define BASE 0
 #define NAV 1
-#define NUM 2
-#define SYM 3
-#define FUN 4
-#define MED 5
+#define FUN 2
+#define MED 3
 
 #define SPC_SFT LSFT_T(KC_SPC)
-#define ENT_FUN LT(FUN, KC_ENT)
-#define TAB_NUM LT(NUM, KC_TAB)
+#define ENT_MED LT(MED, KC_ENT)
+#define TAB_FUN LT(FUN, KC_TAB)
 #define BSPC_NAV LT(NAV, KC_BSPC)
-#define DEL_MED LT(MED, KC_DEL)
-#define ESC_SYM LT(SYM, KC_ESC)
 
 /* --- HOME ROW MODS --- */
 #define HM_A LCTL_T(KC_A)
@@ -93,59 +89,41 @@ combo_t key_combos[] = {
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 // BASE
 LAYOUT(
-    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                   XXXXXXX,  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-    KC_MINS, KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,                      KC_Y,     KC_U,    KC_I,    KC_O,    KC_P,    KC_LBRC,
-    KC_F18,  HM_A,    HM_S,    HM_D,    HM_F,    KC_G,                      KC_H,     HM_J,    HM_K,    HM_L,    HM_SCLN, KC_QUOT,
-    KC_EQL,  KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    XXXXXXX, XXXXXXX, KC_N,     KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_RBRC,
-                      XXXXXXX, XXXXXXX, ESC_SYM, TAB_NUM, SPC_SFT, ENT_FUN, BSPC_NAV, DEL_MED, XXXXXXX, XXXXXXX
+    KC_GRV,  KC_1, KC_2,    KC_3,    KC_4,    KC_5,                      KC_6,     KC_7,    KC_8,    KC_9,    KC_0,    KC_DEL,
+    KC_ESC,  KC_Q, KC_W,    KC_E,    KC_R,    KC_T,                      KC_Y,     KC_U,    KC_I,    KC_O,    KC_P,    KC_LBRC,
+    KC_F18,  HM_A, HM_S,    HM_D,    HM_F,    KC_G,                      KC_H,     HM_J,    HM_K,    HM_L,    HM_SCLN, KC_QUOT,
+    KC_BSLS, KC_Z, KC_X,    KC_C,    KC_V,    KC_B,    XXXXXXX, XXXXXXX, KC_N,     KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_RBRC,
+                   XXXXXXX, XXXXXXX, XXXXXXX, TAB_FUN, SPC_SFT, ENT_MED, BSPC_NAV, XXXXXXX, XXXXXXX, XXXXXXX
 ),
 // NAV
 LAYOUT(
-    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                   MS_BTN5, KC_HOME, KC_UP,   KC_END,  XXXXXXX, XXXXXXX,
-    XXXXXXX, KC_LCTL, KC_LALT, KC_LGUI, KC_LSFT, XXXXXXX,                   MS_BTN4, KC_LEFT, KC_DOWN, KC_RGHT, XXXXXXX, XXXXXXX,
-    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_INS,  KC_PGDN, XXXXXXX, KC_PGUP, XXXXXXX, XXXXXXX,
+    _______, _______, _______, _______, _______, _______,                   _______, _______, _______, _______, _______, _______,
+    _______, _______, _______, _______, _______, _______,                   MS_BTN5, KC_HOME, KC_UP,   KC_END,  _______, _______,
+    _______, KC_LCTL, KC_LALT, KC_LGUI, KC_LSFT, _______,                   MS_BTN4, KC_LEFT, KC_DOWN, KC_RGHT, _______, _______,
+    _______, _______, _______, _______, _______, _______, _______, _______, KC_INS,  KC_PGDN, _______, KC_PGUP, _______, _______,
                       _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
-),
-// NUM
-LAYOUT(
-    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                   XXXXXXX,   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                   S(KC_EQL), KC_7,    KC_8,    KC_9,    S(KC_8), XXXXXXX,
-    XXXXXXX, KC_LCTL, KC_LALT, KC_LGUI, KC_LSFT, XXXXXXX,                   KC_MINS,   KC_4,    KC_5,    KC_6,    KC_SLSH, XXXXXXX,
-    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_0,      KC_1,    KC_2,    KC_3,    KC_DOT,  XXXXXXX,
-                      XXXXXXX, XXXXXXX, _______, _______, _______, _______, _______,   _______, XXXXXXX, XXXXXXX
-),
-// SYM
-LAYOUT(
-    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                   XXXXXXX,   XXXXXXX,    XXXXXXX,   XXXXXXX,    XXXXXXX, XXXXXXX,
-    XXXXXXX, S(KC_1), S(KC_2), S(KC_3), S(KC_4), S(KC_5),                   S(KC_6),   S(KC_7),    S(KC_8),   XXXXXXX,    XXXXXXX, _______,
-    XXXXXXX, KC_LCTL, KC_LALT, KC_LGUI, KC_LSFT, S(KC_6),                   KC_GRV,    KC_MINS,    KC_EQL,    KC_BSLS,    _______, _______,
-    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, S(KC_GRV), S(KC_MINS), S(KC_EQL), S(KC_BSLS), _______, _______,
-                      XXXXXXX, XXXXXXX, _______, _______, _______, _______, _______,   _______,    XXXXXXX,   XXXXXXX
 ),
 // FUN
 LAYOUT(
-    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-    XXXXXXX, KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,                     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-    XXXXXXX, KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,                    XXXXXXX, KC_RSFT, KC_RGUI, KC_LALT, KC_RCTL, XXXXXXX,
-    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_F11,  KC_F12,  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-                      XXXXXXX, XXXXXXX, _______, _______, _______, _______, _______, _______, XXXXXXX, XXXXXXX
+    _______, _______, _______, _______, _______, _______,                   _______, _______, _______, _______, _______, _______,
+    _______, _______, _______, _______, _______, _______,                   KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   _______,
+    _______, KC_LCTL, KC_LALT, KC_LGUI, KC_LSFT, _______,                   KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  _______,
+    _______, _______, _______, _______, _______, _______, _______, _______, KC_F11,  KC_F12,  _______, _______, _______, _______,
+                      _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
 ),
 // MED
 LAYOUT(
-    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-    RM_NEXT, RM_SPDU, RM_HUEU, RM_SATU, RM_VALU, XXXXXXX,                   DT_UP,   KC_VOLD, KC_MUTE, KC_VOLU, XXXXXXX, XXXXXXX,
-    RM_PREV, RM_SPDD, RM_HUED, RM_SATD, RM_VALD, RM_TOGG,                   DT_DOWN, KC_MPRV, KC_MPLY, KC_MNXT, XXXXXXX, XXXXXXX,
-    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_BRID, XXXXXXX, KC_BRIU, XXXXXXX, XXXXXXX,
-                      XXXXXXX, XXXXXXX, _______, _______, _______, _______, _______, _______, XXXXXXX, XXXXXXX
+    _______, _______, _______, _______, _______, _______,                   _______, _______, _______, _______, _______, _______,
+    RM_NEXT, RM_SPDU, RM_HUEU, RM_SATU, RM_VALU, _______,                   DT_UP,   KC_VOLD, KC_MUTE, KC_VOLU, _______, _______,
+    RM_PREV, RM_SPDD, RM_HUED, RM_SATD, RM_VALD, RM_TOGG,                   DT_DOWN, KC_MPRV, KC_MPLY, KC_MNXT, _______, _______,
+    _______, _______, _______, _______, _______, _______, _______, _______, _______, KC_BRID, _______, KC_BRIU, _______, _______,
+                      _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
   )
 };
 
 #if defined(ENCODER_MAP_ENABLE)
 const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][NUM_DIRECTIONS] = {
     { ENCODER_CCW_CW(MS_WHLL, MS_WHLR), ENCODER_CCW_CW(MS_WHLU, MS_WHLD) },
-    { ENCODER_CCW_CW(KC_BRIU, KC_BRID), ENCODER_CCW_CW(KC_VOLU, KC_VOLD) },
-    { ENCODER_CCW_CW(KC_BRIU, KC_BRID), ENCODER_CCW_CW(KC_VOLU, KC_VOLD) },
     { ENCODER_CCW_CW(KC_BRIU, KC_BRID), ENCODER_CCW_CW(KC_VOLU, KC_VOLD) },
     { ENCODER_CCW_CW(KC_BRIU, KC_BRID), ENCODER_CCW_CW(KC_VOLU, KC_VOLD) },
     { ENCODER_CCW_CW(KC_BRIU, KC_BRID), ENCODER_CCW_CW(KC_VOLU, KC_VOLD) },
@@ -216,8 +194,6 @@ void render_layer_status(void) {
     uint8_t active_layer = get_highest_layer(layer_state);
     oled_write_P(PSTR("BASE\n"), active_layer == BASE);
     oled_write_P(PSTR("NAV\n"), active_layer == NAV);
-    oled_write_P(PSTR("NUM\n"), active_layer == NUM);
-    oled_write_P(PSTR("SYM\n"), active_layer == SYM);
     oled_write_P(PSTR("FUN\n"), active_layer == FUN);
     oled_write_P(PSTR("MED\n"), active_layer == MED);
 }
