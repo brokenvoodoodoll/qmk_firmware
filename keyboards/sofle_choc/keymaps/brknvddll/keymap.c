@@ -6,15 +6,8 @@
 #include "quantum_keycodes.h"
 #include QMK_KEYBOARD_H
 
-#define BASE 0
-#define NAV 1
-#define FUN 2
-#define MED 3
-
-#define SPC_SFT LSFT_T(KC_SPC)
-#define ENT_MED LT(MED, KC_ENT)
-#define TAB_FUN LT(FUN, KC_TAB)
-#define BSPC_NAV LT(NAV, KC_BSPC)
+#define TAB_NAV LT(NAV, KC_TAB)
+#define BSPC_FUN LT(FUN, KC_BSPC)
 
 /* --- HOME ROW MODS --- */
 #define HM_A LCTL_T(KC_A)
@@ -93,7 +86,7 @@ LAYOUT(
     KC_ESC,  KC_Q, KC_W,    KC_E,    KC_R,    KC_T,                      KC_Y,     KC_U,    KC_I,    KC_O,    KC_P,    KC_LBRC,
     KC_F18,  HM_A, HM_S,    HM_D,    HM_F,    KC_G,                      KC_H,     HM_J,    HM_K,    HM_L,    HM_SCLN, KC_QUOT,
     KC_BSLS, KC_Z, KC_X,    KC_C,    KC_V,    KC_B,    XXXXXXX, XXXXXXX, KC_N,     KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_RBRC,
-                   XXXXXXX, XXXXXXX, XXXXXXX, TAB_FUN, SPC_SFT, ENT_MED, BSPC_NAV, XXXXXXX, XXXXXXX, XXXXXXX
+                   XXXXXXX, XXXXXXX, XXXXXXX, TAB_NAV, KC_SPC,  KC_ENT,  BSPC_FUN, XXXXXXX, XXXXXXX, XXXXXXX
 ),
 // NAV
 LAYOUT(
@@ -106,9 +99,9 @@ LAYOUT(
 // FUN
 LAYOUT(
     _______, _______, _______, _______, _______, _______,                   _______, _______, _______, _______, _______, _______,
-    _______, _______, _______, _______, _______, _______,                   KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   _______,
-    _______, KC_LCTL, KC_LALT, KC_LGUI, KC_LSFT, _______,                   KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  _______,
-    _______, _______, _______, _______, _______, _______, _______, _______, KC_F11,  KC_F12,  _______, _______, _______, _______,
+    _______, KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,                     _______, _______, _______, _______, _______, _______,
+    _______, KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,                    _______, KC_RSFT, KC_RGUI, KC_LALT, KC_RCTL, _______,
+    _______, _______, _______, _______, KC_F11,  KC_F12,  _______, _______, _______, _______, _______, _______, _______, _______,
                       _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
 ),
 // MED
@@ -120,6 +113,10 @@ LAYOUT(
                       _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
   )
 };
+
+layer_state_t layer_state_set_user(layer_state_t state) {
+    return update_tri_layer_state(state, NAV, FUN, MED);
+}
 
 #if defined(ENCODER_MAP_ENABLE)
 const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][NUM_DIRECTIONS] = {
@@ -212,17 +209,11 @@ void render_swap_status(void) {
     }
 }
 
-void render_dynamic_tapping_term(void) {
-    oled_write_P(PSTR("DT"), false);
-    oled_write_uint16(g_tapping_term);
-}
-
 bool oled_task_user(void) {
     if (is_keyboard_master()) {
         render_layer_status();
         oled_write_P(PSTR("\n"), false);
         render_swap_status();
-        render_dynamic_tapping_term();
     } else {
         render_rgb_matrix_info();
     }
