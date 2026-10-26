@@ -65,12 +65,12 @@ combo_t key_combos[] = {
     // COMBO(fg_combo, S(KC_9)),
     COMBO(vb_combo, S(KC_BSLS)),
 
-    COMBO(op_combo, S(KC_COMM)),
+    // COMBO(op_combo, S(KC_COMM)),
     // COMBO(lscln_combo, KC_BSLS),
-    COMBO(dotslsh_combo, S(KC_DOT)),
-    COMBO(io_combo, KC_RBRC),
+    // COMBO(dotslsh_combo, S(KC_DOT)),
+    COMBO(io_combo, KC_LBRC),
     // COMBO(kl_combo, KC_EQL),
-    COMBO(commdot_combo, KC_LBRC),
+    COMBO(commdot_combo, KC_RBRC),
     COMBO(ui_combo, S(KC_9)),
     // COMBO(jk_combo, KC_MINS),
     COMBO(mcomm_combo, S(KC_0)),
@@ -140,6 +140,31 @@ char chordal_hold_handedness(keypos_t key) {
     }
 
     return key.row < rows_per_hand ? 'L' : 'R';
+}
+#endif
+
+#ifdef COMBO_TERM_PER_COMBO
+uint16_t get_combo_term(uint16_t combo_index, combo_t *combo) {
+    switch (combo->keycode) {
+        case KC_W:
+        case KC_E:
+        case KC_R:
+
+        case KC_X:
+        case KC_C:
+        case KC_V:
+
+        case KC_U:
+        case KC_I:
+        case KC_O:
+
+        case KC_M:
+        case KC_COMM:
+        case KC_DOT:
+            return 35;
+    }
+
+    return COMBO_TERM;
 }
 #endif
 

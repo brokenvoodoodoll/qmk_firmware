@@ -32,13 +32,16 @@
 #define CHORDAL_HOLD
 #define PERMISSIVE_HOLD
 #define SPECULATIVE_HOLD
+#define COMBO_TERM_PER_COMBO
 
 #define NO_ACTION_MACRO
 #define NO_ACTION_FUNCTION
 #define LAYER_STATE_8BIT
 #define DISABLE_LEADER
 
+// ======
 // Layers
+// ======
 #define BASE 0
 #define NAV 1
 #define FUN 2
@@ -47,6 +50,10 @@
 #define TRI_LAYER_LOWER_LAYER NAV
 #define TRI_LAYER_UPPER_LAYER FUN
 #define TRI_LAYER_ADJUST_LAYER MED
+
+// ============
+// RGB MATRICES
+// ============
 
 // #undef ENABLE_RGB_MATRIX_SOLID_COLOR     // Static single hue, no speed support
 #undef ENABLE_RGB_MATRIX_ALPHAS_MODS         // Static dual hue, speed is hue for secondary hue
