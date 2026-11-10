@@ -12,10 +12,10 @@
 /* --- HOME ROW MODS --- */
 #define HM_A LCTL_T(KC_A)
 #define HM_S LALT_T(KC_S)
-#define HM_D LGUI_T(KC_D)
-#define HM_F LSFT_T(KC_F)
-#define HM_J RSFT_T(KC_J)
-#define HM_K RGUI_T(KC_K)
+#define HM_D LSFT_T(KC_D)
+#define HM_F LGUI_T(KC_F)
+#define HM_J RGUI_T(KC_J)
+#define HM_K RSFT_T(KC_K)
 #define HM_L LALT_T(KC_L)
 #define HM_SCLN RCTL_T(KC_SCLN)
 
