@@ -44,11 +44,11 @@
 // ======
 #define BASE 0
 #define NAV 1
-#define FUN 2
+#define NUM 2
 #define MED 3
 
 #define TRI_LAYER_LOWER_LAYER NAV
-#define TRI_LAYER_UPPER_LAYER FUN
+#define TRI_LAYER_UPPER_LAYER NUM
 #define TRI_LAYER_ADJUST_LAYER MED
 
 // ============

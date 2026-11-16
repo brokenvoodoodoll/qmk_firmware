@@ -7,76 +7,78 @@
 #include QMK_KEYBOARD_H
 
 #define TAB_NAV LT(NAV, KC_TAB)
-#define BSPC_FUN LT(FUN, KC_BSPC)
+#define BSPC_NUM LT(NUM, KC_BSPC)
+#define SFT_SPC LSFT_T(KC_SPC)
+#define SFT_ENT RSFT_T(KC_ENT)
 
 /* --- HOME ROW MODS --- */
-#define HM_A LCTL_T(KC_A)
-#define HM_S LALT_T(KC_S)
-#define HM_D LSFT_T(KC_D)
+#define HM_S LCTL_T(KC_S)
+#define HM_D LALT_T(KC_D)
 #define HM_F LGUI_T(KC_F)
-#define HM_J RGUI_T(KC_J)
-#define HM_K RSFT_T(KC_K)
-#define HM_L LALT_T(KC_L)
-#define HM_SCLN RCTL_T(KC_SCLN)
+#define HM_J LGUI_T(KC_J)
+#define HM_K LALT_T(KC_K)
+#define HM_L LCTL_T(KC_L)
 
 const uint16_t PROGMEM combo_cg_togg[] = {KC_G, KC_H, COMBO_END};
 const uint16_t PROGMEM combo_caps_word[] = {KC_T, KC_Y, COMBO_END};
 
 const uint16_t PROGMEM qw_combo[] = {KC_Q, KC_W, COMBO_END};
-const uint16_t PROGMEM as_combo[] = {KC_A, KC_S, COMBO_END};
-const uint16_t PROGMEM zx_combo[] = {KC_Z, KC_X, COMBO_END};
 const uint16_t PROGMEM we_combo[] = {KC_W, KC_E, COMBO_END};
-const uint16_t PROGMEM sd_combo[] = {KC_S, KC_D, COMBO_END};
-const uint16_t PROGMEM xc_combo[] = {KC_X, KC_C, COMBO_END};
 const uint16_t PROGMEM er_combo[] = {KC_E, KC_R, COMBO_END};
-const uint16_t PROGMEM df_combo[] = {KC_D, KC_F, COMBO_END};
-const uint16_t PROGMEM cv_combo[] = {KC_C, KC_V, COMBO_END};
 const uint16_t PROGMEM rt_combo[] = {KC_R, KC_T, COMBO_END};
-const uint16_t PROGMEM fg_combo[] = {KC_F, KC_G, COMBO_END};
-const uint16_t PROGMEM vb_combo[] = {KC_V, KC_B, COMBO_END};
 
-const uint16_t PROGMEM op_combo[]      = {KC_O, KC_P, COMBO_END};
-const uint16_t PROGMEM lscln_combo[]   = {KC_L, KC_SCLN, COMBO_END};
-const uint16_t PROGMEM dotslsh_combo[] = {KC_DOT, KC_SLSH, COMBO_END};
-const uint16_t PROGMEM io_combo[]      = {KC_I, KC_O, COMBO_END};
-const uint16_t PROGMEM kl_combo[]      = {KC_K, KC_L, COMBO_END};
-const uint16_t PROGMEM commdot_combo[] = {KC_COMM, KC_DOT, COMBO_END};
-const uint16_t PROGMEM ui_combo[]      = {KC_U, KC_I, COMBO_END};
-const uint16_t PROGMEM jk_combo[]      = {KC_J, KC_K, COMBO_END};
-const uint16_t PROGMEM mcomm_combo[]   = {KC_M, KC_COMM, COMBO_END};
-const uint16_t PROGMEM yu_combo[]      = {KC_Y, KC_U, COMBO_END};
-const uint16_t PROGMEM hj_combo[]      = {KC_H, KC_J, COMBO_END};
+const uint16_t PROGMEM as_combo[] = {KC_A, HM_S, COMBO_END};
+const uint16_t PROGMEM sd_combo[] = {HM_S, HM_D, COMBO_END};
+const uint16_t PROGMEM df_combo[] = {HM_D, HM_F, COMBO_END};
+const uint16_t PROGMEM fg_combo[] = {HM_F, KC_G, COMBO_END};
+
+const uint16_t PROGMEM yu_combo[] = {KC_Y, KC_U, COMBO_END};
+const uint16_t PROGMEM ui_combo[] = {KC_U, KC_I, COMBO_END};
+const uint16_t PROGMEM io_combo[] = {KC_I, KC_O, COMBO_END};
+const uint16_t PROGMEM op_combo[] = {KC_O, KC_P, COMBO_END};
+
+const uint16_t PROGMEM hj_combo[]    = {KC_H, HM_J, COMBO_END};
+const uint16_t PROGMEM jk_combo[]    = {HM_J, HM_K, COMBO_END};
+const uint16_t PROGMEM kl_combo[]    = {HM_K, HM_L, COMBO_END};
+const uint16_t PROGMEM lscln_combo[] = {HM_L, KC_SCLN, COMBO_END};
+
 const uint16_t PROGMEM nm_combo[]      = {KC_N, KC_M, COMBO_END};
+const uint16_t PROGMEM mcomm_combo[]   = {KC_M, KC_COMM, COMBO_END};
+const uint16_t PROGMEM commdot_combo[] = {KC_COMM, KC_DOT, COMBO_END};
+const uint16_t PROGMEM dotslsh_combo[] = {KC_DOT, KC_SLSH, COMBO_END};
 
 combo_t key_combos[] = {
     COMBO(combo_cg_togg, CG_TOGG),
     COMBO(combo_caps_word, CW_TOGG),
 
     COMBO(qw_combo, KC_GRV),
-    // COMBO(as_combo, S(KC_GRV)),
-    COMBO(zx_combo, S(KC_GRV)),
     COMBO(we_combo, KC_EQL),
-    // COMBO(sd_combo, KC_BSLS),
-    COMBO(xc_combo, S(KC_EQL)),
     COMBO(er_combo, KC_MINS),
-    // COMBO(df_combo, KC_GRV),
-    COMBO(cv_combo, S(KC_MINS)),
     COMBO(rt_combo, KC_BSLS),
+
+    COMBO(yu_combo, S(KC_LBRC)),
+    COMBO(ui_combo, S(KC_9)),
+    COMBO(io_combo, KC_LBRC),
+
+    COMBO(hj_combo, S(KC_RBRC)),
+    COMBO(jk_combo, S(KC_0)),
+    COMBO(kl_combo, KC_RBRC),
+
+    // COMBO(as_combo, S(KC_GRV)),
+    // COMBO(zx_combo, S(KC_GRV)),
+    // COMBO(sd_combo, KC_BSLS),
+    // COMBO(xc_combo, S(KC_EQL)),
+    // COMBO(df_combo, KC_GRV),
+    // COMBO(cv_combo, S(KC_MINS)),
     // COMBO(fg_combo, S(KC_9)),
-    COMBO(vb_combo, S(KC_BSLS)),
+    // COMBO(vb_combo, S(KC_BSLS)),
 
     // COMBO(op_combo, S(KC_COMM)),
     // COMBO(lscln_combo, KC_BSLS),
     // COMBO(dotslsh_combo, S(KC_DOT)),
-    COMBO(io_combo, KC_LBRC),
-    // COMBO(kl_combo, KC_EQL),
-    COMBO(commdot_combo, KC_RBRC),
-    COMBO(ui_combo, S(KC_9)),
-    // COMBO(jk_combo, KC_MINS),
-    COMBO(mcomm_combo, S(KC_0)),
-    COMBO(yu_combo, S(KC_LBRC)),
-    // COMBO(hj_combo, S(KC_0)),
-    COMBO(nm_combo, S(KC_RBRC)),
+    // COMBO(commdot_combo, KC_RBRC),
+    // COMBO(mcomm_combo, S(KC_0)),
+    // COMBO(nm_combo, S(KC_RBRC)),
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -84,38 +86,38 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 LAYOUT(
     KC_GRV,  KC_1, KC_2,    KC_3,    KC_4,   KC_5,                      KC_6,     KC_7,   KC_8,    KC_9,    KC_0,    KC_DEL,
     KC_ESC,  KC_Q, KC_W,    KC_E,    KC_R,   KC_T,                      KC_Y,     KC_U,   KC_I,    KC_O,    KC_P,    KC_LBRC,
-    KC_F18,  HM_A, HM_S,    HM_D,    HM_F,   KC_G,                      KC_H,     HM_J,   HM_K,    HM_L,    HM_SCLN, KC_QUOT,
+    KC_F18,  KC_A, HM_S,    HM_D,    HM_F,   KC_G,                      KC_H,     HM_J,   HM_K,    HM_L,    KC_SCLN, KC_QUOT,
     KC_BSLS, KC_Z, KC_X,    KC_C,    KC_V,   KC_B,    XXXXXXX, XXXXXXX, KC_N,     KC_M,   KC_COMM, KC_DOT,  KC_SLSH, KC_RBRC,
-                   XXXXXXX, XXXXXXX, KC_ESC, TAB_NAV, KC_SPC,  KC_ENT,  BSPC_FUN, KC_DEL, XXXXXXX, XXXXXXX
+                   XXXXXXX, XXXXXXX, KC_ESC, TAB_NAV, SFT_SPC, SFT_ENT, BSPC_NUM, KC_DEL, XXXXXXX, XXXXXXX
 ),
 // NAV
 LAYOUT(
     _______, _______, _______, _______, _______, _______,                   _______, _______, _______, _______, _______, _______,
     _______, _______, _______, _______, _______, _______,                   _______, KC_HOME, KC_UP,   KC_END,  _______, _______,
-    _______, KC_LCTL, KC_LALT, KC_LGUI, KC_LSFT, _______,                   _______, KC_LEFT, KC_DOWN, KC_RGHT, _______, _______,
-    _______, _______, _______, _______, _______, _______, _______, _______, _______, KC_PGDN, KC_INS, KC_PGUP, _______, _______,
+    _______, _______, KC_LCTL, KC_LALT, KC_LGUI, _______,                   _______, KC_LEFT, KC_DOWN, KC_RGHT, _______, _______,
+    _______, _______, _______, _______, _______, _______, _______, _______, _______, KC_PGDN, KC_INS,  KC_PGUP, _______, _______,
                       _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
 ),
-// FUN
+// NUM
 LAYOUT(
     _______, _______, _______, _______, _______, _______,                   _______, _______, _______, _______, _______, _______,
-    _______, KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,                     _______, _______, _______, _______, _______, _______,
-    _______, KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,                    _______, KC_RSFT, KC_RGUI, KC_LALT, KC_RCTL, _______,
-    _______, _______, _______, _______, KC_F11,  KC_F12,  _______, _______, _______, _______, _______, _______, _______, _______,
+    _______, _______, KC_7,    KC_8,    KC_9,    _______,                   _______, _______, _______, _______, _______, _______,
+    _______, _______, KC_4,    KC_5,    KC_6,    _______,                   _______, KC_RGUI, KC_LALT, KC_RCTL, _______, _______,
+    _______, KC_0,    KC_1,    KC_2,    KC_3,    KC_0,    _______, _______, _______, _______, _______, _______, _______, _______,
                       _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
 ),
 // MED
 LAYOUT(
     _______, _______, _______, _______, _______, _______,                   _______, _______, _______, _______, _______, _______,
-    _______, _______, _______, _______, _______, _______,                   _______, KC_VOLD, KC_MUTE, KC_VOLU, _______, _______,
-    RM_PREV, RM_SPDD, RM_HUED, RM_SATD, RM_VALD, RM_TOGG,                   _______, KC_MPRV, KC_MPLY, KC_MNXT, _______, _______,
-    RM_NEXT, RM_SPDU, RM_HUEU, RM_SATU, RM_VALU, _______, _______, _______, _______, KC_BRID, _______, KC_BRIU, _______, _______,
+    _______, KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,                     KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  _______,
+    RM_PREV, RM_SPDD, RM_HUED, RM_SATD, RM_VALD, RM_TOGG,                   KC_F11,  KC_VOLU, KC_MPLY, KC_MNXT, KC_BRIU, _______,
+    RM_NEXT, RM_SPDU, RM_HUEU, RM_SATU, RM_VALU, _______, _______, _______, KC_F12,  KC_VOLD, KC_MUTE, KC_MPRV, KC_BRID, _______,
                       _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
   )
 };
 
 layer_state_t layer_state_set_user(layer_state_t state) {
-    return update_tri_layer_state(state, NAV, FUN, MED);
+    return update_tri_layer_state(state, NAV, NUM, MED);
 }
 
 #if defined(ENCODER_MAP_ENABLE)
@@ -216,7 +218,7 @@ void render_layer_status(void) {
     uint8_t active_layer = get_highest_layer(layer_state);
     oled_write_P(PSTR("BASE\n"), active_layer == BASE);
     oled_write_P(PSTR("NAV\n"), active_layer == NAV);
-    oled_write_P(PSTR("FUN\n"), active_layer == FUN);
+    oled_write_P(PSTR("NUM\n"), active_layer == NUM);
     oled_write_P(PSTR("MED\n"), active_layer == MED);
 }
 
